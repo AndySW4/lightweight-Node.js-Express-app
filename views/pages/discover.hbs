@@ -1,0 +1,26 @@
+<h2>Discover Events</h2>
+
+<div class="row">
+    {{#each events}}
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            {{#if images}}
+            <img src="{{images.[0].url}}" class="card-img-top" alt="Event Image">
+            {{else}}
+            <img src="/default-image.jpg" class="card-img-top" alt="Default Event Image">
+            {{/if}}
+
+
+            <div class="card-body">
+                <h5 class="card-title">{{name}}</h5>
+
+                <p class="card-text">{{dates.start.localDate}} at {{dates.start.localTime}}</p>
+
+                <a href="{{url}}" class="btn btn-primary" target="_blank">Book Now</a>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+
+{{> message}}
